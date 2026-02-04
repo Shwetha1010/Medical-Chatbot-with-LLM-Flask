@@ -77,6 +77,4 @@ Medical question answering requires high factual accuracy. This project mitigate
 
 This project demonstrates **applied LLM system engineering**, integrating NLP, vector databases, and backend development to build a **production-oriented, real-world medical AI application**.
 
----
 
-If you want a **diagram**, **Docker deployment section**, or **evaluation metrics block**, I can add those cleanly without bloating the README.
