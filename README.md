@@ -1,4 +1,4 @@
-# Medical-Chatbot-with-LLM-Flask-and-AWS
+# Medical-Chatbot-with-LLM-Flask
 
 ''' bash
 
