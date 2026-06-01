@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+.cursorignore
+.cursorindexingignore
+
+# Mac OS files
+.DS_Store
