@@ -1,42 +1,276 @@
-# Medical-Chatbot-with-LLM-Flask-and-AWS
+# HealBot: AI-Powered Medical Assistant using RAG, LangChain, Pinecone, and LLMs
 
-''' bash
+## Overview
 
- conda create -n medibot python=3.11.0 -y
-'''
+HealBot is an intelligent medical question-answering system built using Retrieval-Augmented Generation (RAG), LangChain, Pinecone Vector Database, and Groq's Llama 3.3 70B model.
 
-'''bash
+The system retrieves relevant medical information from a document repository and generates context-aware responses grounded in trusted medical sources. By combining semantic search with large language models, HealBot reduces hallucinations and improves the reliability of generated responses.
 
-conda activate medibot
-'''
+This project demonstrates the practical implementation of modern Generative AI concepts including Retrieval-Augmented Generation, Vector Databases, Semantic Search, Prompt Engineering, and LLM-based Question Answering.
 
-## AWS-CICD-Deployment-with-Github-Actions
+---
 
-# 1.Login to AWS console
+## Key Features
 
-# 2.Create IAM user for deployment
+### Medical Knowledge Retrieval
 
-#with specific access
+* Extracts information from medical PDF documents
+* Performs intelligent document chunking for efficient retrieval
+* Preserves document context during processing
 
-1. EC2 access : It is virtual machine
+### Semantic Search
 
-2. ECR: Elastic Container registry to save your docker image in aws
+* Converts medical content into vector embeddings
+* Stores embeddings in Pinecone Vector Database
+* Retrieves relevant information using similarity search
 
+### Context-Aware Question Answering
 
-#Description: About the deployment
+* Powered by Groq's Llama 3.3 70B model
+* Generates grounded responses using retrieved context
+* Reduces hallucinations through retrieval-based reasoning
 
-1. Build docker image of the source code
+### Web-Based Interface
 
-2. Push your docker image to ECR
+* Built using Flask
+* Supports real-time question-answer interaction
+* Provides a simple and user-friendly experience
 
-3. Launch Your EC2 
+---
 
-4. Pull Your image from ECR in EC2
+## System Architecture
 
-5. Lauch your docker image in EC2
+```text
+User Query
+     │
+     ▼
+Flask Web Application
+     │
+     ▼
+Embedding Generation
+     │
+     ▼
+Pinecone Vector Database
+     │
+     ▼
+Top Relevant Medical Chunks
+     │
+     ▼
+Groq Llama 3.3 70B
+     │
+     ▼
+Generated Response
+     │
+     ▼
+User
+```
 
-#Policy:
+---
 
-1. AmazonEC2ContainerRegistryFullAccess
+## Technology Stack
 
-2. AmazonEC2FullAccess
+### Generative AI
+
+* LangChain
+* Retrieval-Augmented Generation (RAG)
+* Prompt Engineering
+
+### Large Language Models
+
+* Groq API
+* Llama 3.3 70B
+
+### Embeddings
+
+* Sentence Transformers
+* all-MiniLM-L6-v2
+
+### Vector Database
+
+* Pinecone
+
+### Backend
+
+* Python
+* Flask
+
+### Document Processing
+
+* PyPDFLoader
+* Recursive Character Text Splitter
+
+### Deployment and DevOps
+
+* Docker
+* GitHub Actions
+
+---
+
+## How It Works
+
+### Step 1: Document Ingestion
+
+Medical PDF documents are loaded using PyPDFLoader.
+
+### Step 2: Document Chunking
+
+Documents are divided into smaller chunks using Recursive Character Text Splitter.
+
+### Step 3: Embedding Generation
+
+Each chunk is converted into vector embeddings using Sentence Transformers.
+
+### Step 4: Vector Storage
+
+Embeddings are stored in Pinecone Vector Database.
+
+### Step 5: Query Processing
+
+User queries are converted into embeddings and matched against stored vectors.
+
+### Step 6: Context Retrieval
+
+The most relevant document chunks are retrieved based on semantic similarity.
+
+### Step 7: Response Generation
+
+Retrieved context is passed to the LLM to generate a grounded and context-aware response.
+
+---
+
+## Project Structure
+
+```text
+Medical-Chatbot-with-LLM-Flask
+│
+├── app.py
+├── store_index.py
+├── requirements.txt
+├── Dockerfile
+│
+├── data/
+│   └── Medical PDF Documents
+│
+├── src/
+│   ├── helper.py
+│   └── prompt.py
+│
+├── templates/
+│   └── chat.html
+│
+├── static/
+│   └── style.css
+│
+├── research/
+│
+└── README.md
+```
+
+---
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Shwetha1010/Medical-Chatbot-with-LLM-Flask.git
+cd Medical-Chatbot-with-LLM-Flask
+```
+
+### Create Virtual Environment
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Configure Environment Variables
+
+Create a `.env` file:
+
+```env
+PINECONE_API_KEY=your_pinecone_api_key
+GROQ_API_KEY=your_groq_api_key
+```
+
+### Create Vector Index
+
+```bash
+python store_index.py
+```
+
+### Run Application
+
+```bash
+python app.py
+```
+
+Open:
+
+```text
+http://127.0.0.1:8080
+```
+
+---
+
+## Applications
+
+* Medical Information Retrieval
+* Healthcare Knowledge Assistance
+* Clinical FAQ Systems
+* Patient Support Systems
+* AI-Powered Document Search
+* Enterprise Knowledge Management
+
+---
+
+## Skills Demonstrated
+
+* Generative AI
+* Retrieval-Augmented Generation (RAG)
+* Large Language Models (LLMs)
+* LangChain
+* Pinecone
+* Vector Databases
+* Semantic Search
+* Prompt Engineering
+* Flask Development
+* API Integration
+* Docker
+* CI/CD
+
+---
+
+## Future Enhancements
+
+* Multi-document knowledge base
+* Conversation memory
+* Medical source citations
+* Voice-enabled interaction
+* Cloud deployment
+* Multi-modal medical assistant
+* Fine-tuned healthcare language models
+
+---
+
+## Author
+
+Shwetha Sunil
+Integrated MSc Data Science
+
+Areas of Interest:
+
+* Artificial Intelligence
+* Machine Learning
+* Generative AI
+* Agentic AI
+* Retrieval-Augmented Generation (RAG)
+* Large Language Models (LLMs)
+
+Email: [shwethasunil003@gmail.com](mailto:shwethasunil003@gmail.com)
