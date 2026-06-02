@@ -81,39 +81,11 @@ AWS EC2 Deployment
 Live Application
 ```
 
----
-
-## Project Highlights
-
-* Developed an end-to-end RAG system for domain-specific question answering
-* Implemented semantic document retrieval using vector embeddings
-* Integrated enterprise-scale LLM inference through Groq
-* Designed and deployed a containerized AI application on AWS
-* Automated deployment using CI/CD workflows
-* Applied modern AI engineering practices including retrieval grounding and prompt engineering
-
----
-
-## Skills Demonstrated
-
-* Generative AI
-* Retrieval-Augmented Generation (RAG)
-* Large Language Models (LLMs)
-* LangChain
-* Prompt Engineering
-* Vector Databases
-* Semantic Search
-* Flask Development
-* Docker
-* AWS Cloud Deployment
-* CI/CD Automation
-* API Integration
 
 ---
 
 ## Screenshots
 
-## Screenshots
 
 ### HealBot Medical Assistant Interface
 
